@@ -24,7 +24,9 @@
         .menu-options.active{display:flex}
         .menu-options a{width:50px;height:50px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s}
         .menu-options a:hover{transform:scale(1.15)}
-        .whatsapp-button{position:fixed;bottom:20px;right:20px;z-index:1000;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px #25D366,0 0 30px #25D366;animation:neon 1.5s ease-in-out infinite alternate}
+        /* Ícones do menu em branco */
+        .menu-options a i{color:#fff;font-size:1.2rem}
+        .whatsapp-button{position:fixed;bottom:20px;right:20px;z-index:1000;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px #25D366,0 0 30px #25D366;animation:neon 1.5s ease-in-out infinite alternate;text-decoration:none}
         @keyframes neon{from{box-shadow:0 0 10px #25D366,0 0 20px #25D366}to{box-shadow:0 0 20px #25D366,0 0 40px #25D366}}
         .whatsapp-button i{font-size:2rem;color:#fff}
         .card{position:relative;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border-radius:15px;padding:20px;transition:transform .3s;text-align:center;overflow:hidden}
@@ -36,8 +38,8 @@
         @keyframes sparkle{0%,100%{opacity:1;transform:rotate(0)}50%{opacity:.8;transform:rotate(180deg)}}
         .card .testimonial-img{position:absolute;top:10px;left:10px;width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid #6a00f4}
         .elite-title{background:linear-gradient(90deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .trident-wrap{position:relative;display:inline-block}
-        .trident{font-size:2rem;color:#FFD700;margin-bottom:10px;display:inline-block}
+        .trident-wrap{position:relative;display:inline-block;margin-bottom:10px}
+        .trident{font-size:2rem;color:#FFD700;display:inline-block}
         /* sparkle elements around the trident, centered */
         .trident-wrap .spark{position:absolute;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#fff,#ffd700);opacity:0;transform:translate(-50%,-50%) scale(.6);animation:twinkle 2s infinite ease-in-out}
         .trident-wrap .spark.s1{left:50%;top:12%}
@@ -53,8 +55,10 @@
         section .subtitle{font-size:1.2rem;text-align:center;margin-bottom:40px;color:#fff}
         .cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
         #marketing{background:#1a1a1a}
+        #servicos{background:#000} /* Fundo preto para a seção de serviços */
         #portfolio{background:#1a1a1a;text-align:center}
-        #portfolio img{width:100%;max-width:800px;border-radius:10px}
+        #portfolio img{width:100%;max-width:800px;border-radius:10px;margin:0 auto;display:block}
+        #portfolio .gradient-button{margin:20px auto;display:block;width:fit-content}
         #depoimentos{background:#000;text-align:center}
         #cta{background:linear-gradient(to bottom,#4B0082,#00008B);text-align:center;position:relative;overflow:hidden;min-height:240px;padding:40px 5%}
         #cta canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:auto;z-index:0}
@@ -101,7 +105,7 @@
             <div class="card">
                 <i class="fas fa-gem"></i>
                 <h3 class="gradient-title">Nossos Diferenciais</h3>
-                <p>O que nos destaca é o nosso compromisso com a qualidade e o profissionalismo. Utilizamos ferramentas avançadas e contamos com profissionais experientes para garantir que cada projeto atenda aos altos padrões que nossos clientes esperam. Além disso, cada cliente recebe estratégias adaptadas às suas necessidades, assegurando resultados que superam expectativas. Acompanhamos o desempenho de nossas campanhas através de análise de dados, permitindo ajustes que maximizam o retorno sobre investimento (ROI).</p>
+                <p>O que nos destaca é o nosso compromisso com a qualidade e o profissionalismo. Utilizamos ferramentas avançadas e contamos com profissionais experientes para garantir que cada projeto atenda aos altos padrões que nossos clientes esperam. Além disso, cada cliente recebe estratégias adaptadas às suas necessidades, assegurando resultados que superam expectativas. Acompanhamos o desemponho de nossas campanhas através de análise de dados, permitindo ajustes que maximizam o retorno sobre investimento (ROI).</p>
             </div>
             <div class="card">
                 <i class="fas fa-user"></i>
@@ -137,8 +141,6 @@
                 <p><s>R$450</s> por apenas <strong>R$399,90</strong><br><span>11,13% OFF</span></p>
             </div>
             <div class="card gold elite">
-                <i class="fas fa-crow"></i>
-                <!-- Trident wrap: sparkle elements are positioned relative to this wrapper, keeping them centered -->
                 <div class="trident-wrap">
                     <span class="trident">🔱</span>
                     <span class="spark s1"></span>
