@@ -3,315 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MightX - Ascensão Digital & Criativa</title>
+    <title>MightX - Ascensão Digital & Criativa (corrigido)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://github.com/mightxwebdzn-web/MightX-Ascens-o-Digital-Criativa/raw/main/icon.png">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        /* Gradient for titles */
-        .gradient-title {
-            background: linear-gradient(90deg, #6a00f4, #00ddeb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Scroll animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
-        }
-
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Banner */
-        #banner {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/mightxwebdzn-web/MightX-Ascens-o-Digital-Criativa/raw/main/wallpaper.png') no-repeat center/cover;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-        }
-
-        #banner .content {
-            max-width: 600px;
-        }
-
-        #banner h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        #banner p {
-            font-size: 1.2rem;
-            margin-top: 20px;
-            font-weight: 300;
-        }
-
-        /* Menu Button - Radial Menu */
-        .menu-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-
-        .menu-button img {
-            width: 50px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .menu-button img:hover {
-            transform: scale(1.1);
-        }
-
-        .menu-options {
-            position: fixed;
-            top: 50px;
-            left: 50px;
-            display: none;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .menu-options a {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: radialAnim 0.5s ease forwards;
-            color: #fff;
-        }
-
-        .menu-options a:nth-child(1) { top: 10px; left: 75px; animation-delay: 0.1s; }
-        .menu-options a:nth-child(2) { top: 60px; left: 140px; animation-delay: 0.2s; }
-        .menu-options a:nth-child(3) { top: 110px; left: 75px; animation-delay: 0.3s; }
-
-        .menu-options a:hover {
-            transform: scale(1.2);
-        }
-
-        @keyframes radialAnim {
-            from { opacity: 0; transform: scale(0); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .menu-button:hover .menu-options {
-            display: flex;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px #25D366, 0 0 30px #25D366;
-            animation: neon 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes neon {
-            from { box-shadow: 0 0 10px #25D366, 0 0 20px #25D366; }
-            to { box-shadow: 0 0 20px #25D366, 0 0 40px #25D366; }
-        }
-
-        .whatsapp-button i {
-            font-size: 2rem;
-            color: #fff;
-        }
-
-        /* Cards */
-        .card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            transition: transform 0.3s;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 2px;
-            background: linear-gradient(90deg, #6a00f4, #00ddeb);
-            border-radius: 15px;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-            -webkit-mask-composite: xor;
-            z-index: -1;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #6a00f4, #00ddeb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            z-index: 2;
-        }
-
-        .card.gold i {
-            background: none;
-            color: #FFD700;
-            animation: sparkle 2s infinite;
-            position: relative;
-        }
-
-        .card.gold i::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: sparkles 1.5s infinite;
-            z-index: -1;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 1; transform: rotate(0deg); }
-            50% { opacity: 0.7; transform: rotate(180deg); }
-        }
-
-        @keyframes sparkles {
-            0% { transform: scale(0) rotate(0deg); opacity: 1; }
-            100% { transform: scale(2) rotate(360deg); opacity: 0; }
-        }
-
-        .card .instagram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            margin: 10px 0;
-        }
-
-        .card .testimonial-img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #6a00f4;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 5%;
-            min-height: 100vh;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        section .subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #fff;
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        #portfolio {
-            background: #1a1a1a;
-        }
-
-        #portfolio iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
-        }
-
-        #depoimentos {
-            background: #000;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            #banner h1 {
-                font-size: 2rem;
-            }
-
-            #banner p {
-                font-size: 1rem;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .menu-options {
-                width: 150px;
-                height: 150px;
-            }
-
-            .menu-options a:nth-child(1) { top: 10px; left: 50px; }
-            .menu-options a:nth-child(2) { top: 40px; left: 100px; }
-            .menu-options a:nth-child(3) { top: 70px; left: 50px; }
-        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+        body{background:#000;color:#fff;overflow-x:hidden}
+        .gradient-title{background:linear-gradient(90deg,#6a00f4,#00ddeb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .scroll-reveal{opacity:0;transform:translateY(50px);transition:all .8s ease-out}
+        .scroll-reveal.active{opacity:1;transform:translateY(0)}
+        #banner{height:100vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://github.com/mightxwebdzn-web/MightX-Ascens-o-Digital-Criativa/raw/main/wallpaper.png') center/cover no-repeat;display:flex;align-items:center;padding:0 5%}
+        #banner .content{max-width:600px}
+        #banner h1{font-size:3rem;font-weight:700;line-height:1.2}
+        #banner p{font-size:1.2rem;margin-top:20px;font-weight:300}
+        .menu-button{position:fixed;top:20px;left:20px;z-index:1000;display:flex;align-items:center}
+        .menu-button img{width:50px;cursor:pointer;transition:transform .3s;margin-right:10px}
+        .menu-button img:hover{transform:scale(1.1)}
+        .menu-options{display:none;flex-direction:row;gap:10px}
+        .menu-options.active{display:flex}
+        .menu-options a{width:50px;height:50px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s}
+        .menu-options a:hover{transform:scale(1.15)}
+        .whatsapp-button{position:fixed;bottom:20px;right:20px;z-index:1000;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px #25D366,0 0 30px #25D366;animation:neon 1.5s ease-in-out infinite alternate}
+        @keyframes neon{from{box-shadow:0 0 10px #25D366,0 0 20px #25D366}to{box-shadow:0 0 20px #25D366,0 0 40px #25D366}}
+        .whatsapp-button i{font-size:2rem;color:#fff}
+        .card{position:relative;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border-radius:15px;padding:20px;transition:transform .3s;text-align:center;overflow:hidden}
+        .card::before{content:'';position:absolute;inset:0;padding:1px;border-radius:15px;background:linear-gradient(90deg,#6a00f4,#00ddeb);mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;z-index:-1}
+        .card.elite::before{background:linear-gradient(90deg,#FFD700,#FFA500)}
+        .card:hover{transform:translateY(-10px)}
+        .card i{font-size:2rem;margin-bottom:10px;background:linear-gradient(90deg,#6a00f4,#00ddeb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative;z-index:2}
+        .card.gold i{background:none;color:#FFD700;animation:sparkle 2s infinite;position:relative}
+        @keyframes sparkle{0%,100%{opacity:1;transform:rotate(0)}50%{opacity:.8;transform:rotate(180deg)}}
+        .card .testimonial-img{position:absolute;top:10px;left:10px;width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid #6a00f4}
+        .elite-title{background:linear-gradient(90deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .trident-wrap{position:relative;display:inline-block}
+        .trident{font-size:2rem;color:#FFD700;margin-bottom:10px;display:inline-block}
+        /* sparkle elements around the trident, centered */
+        .trident-wrap .spark{position:absolute;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#fff,#ffd700);opacity:0;transform:translate(-50%,-50%) scale(.6);animation:twinkle 2s infinite ease-in-out}
+        .trident-wrap .spark.s1{left:50%;top:12%}
+        .trident-wrap .spark.s2{left:76%;top:40%}
+        .trident-wrap .spark.s3{left:24%;top:40%}
+        .trident-wrap .spark.s4{left:58%;top:70%}
+        .trident-wrap .spark.s5{left:42%;top:70%}
+        @keyframes twinkle{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}30%{opacity:1;transform:translate(-50%,-50%) scale(1)}60%{opacity:.6;transform:translate(-50%,-50%) scale(.8)}100%{opacity:0;transform:translate(-50%,-50%) scale(.6)}}
+        .gradient-button{display:inline-block;background:linear-gradient(90deg,#6a00f4,#00ddeb);color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;margin-top:20px;transition:transform .3s}
+        .gradient-button:hover{transform:scale(1.05)}
+        section{padding:60px 5%;min-height:100vh}
+        section h2{font-size:2.5rem;text-align:center;margin-bottom:20px}
+        section .subtitle{font-size:1.2rem;text-align:center;margin-bottom:40px;color:#fff}
+        .cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+        #marketing{background:#1a1a1a}
+        #portfolio{background:#1a1a1a;text-align:center}
+        #portfolio img{width:100%;max-width:800px;border-radius:10px}
+        #depoimentos{background:#000;text-align:center}
+        #cta{background:linear-gradient(to bottom,#4B0082,#00008B);text-align:center;position:relative;overflow:hidden;min-height:240px;padding:40px 5%}
+        #cta canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:auto;z-index:0}
+        #cta h2{color:#fff;position:relative;z-index:2;margin-bottom:20px}
+        #cta .cta-button{background:rgba(255,255,255,.2);backdrop-filter:blur(5px);color:#fff;padding:15px 30px;border-radius:50px;text-decoration:none;transition:background .3s;position:relative;z-index:2}
+        #cta .cta-button:hover{background:rgba(255,255,255,.3)}
+        footer{background:#000;text-align:center;padding:20px;font-size:.8rem}
+        @media(max-width:768px){#banner h1{font-size:2rem}#banner p{font-size:1rem}section h2{font-size:2rem}}
     </style>
 </head>
 <body>
     <!-- Menu Button -->
     <div class="menu-button">
-        <img src="https://github.com/mightxwebdzn-web/MightX-Ascens-o-Digital-Criativa/raw/main/icon.png" alt="MightX Logo">
-        <div class="menu-options">
+        <img src="https://github.com/mightxwebdzn-web/MightX-Ascens-o-Digital-Criativa/raw/main/icon.png" alt="MightX Logo" id="logo-btn">
+        <div class="menu-options" id="menu-options">
             <a href="https://api.whatsapp.com/send/?phone=%2B5533984067438&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.instagram.com/mightx_official/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://francodocess.my.canva.site/portfolio-mightx" target="_blank"><i class="fas fa-briefcase"></i></a>
@@ -368,7 +126,7 @@
                 <p><s>R$330</s> por apenas <strong>R$299,90</strong><br><span>9,12% OFF</span></p>
             </div>
             <div class="card">
-                <i class="fas fa-sword"></i>
+                <i class="fas fa-shield-alt"></i>
                 <h3 class="gradient-title">Pacote Avançado</h3>
                 <p>2-3 posts por semana</p>
                 <p>2-3 reels por semana</p>
@@ -378,9 +136,18 @@
                 <p>Suporte Personalizado</p>
                 <p><s>R$450</s> por apenas <strong>R$399,90</strong><br><span>11,13% OFF</span></p>
             </div>
-            <div class="card gold">
-                <i class="fas fa-bird"></i>
-                <h3 class="gradient-title">Pacote Elite</h3>
+            <div class="card gold elite">
+                <i class="fas fa-crow"></i>
+                <!-- Trident wrap: sparkle elements are positioned relative to this wrapper, keeping them centered -->
+                <div class="trident-wrap">
+                    <span class="trident">🔱</span>
+                    <span class="spark s1"></span>
+                    <span class="spark s2"></span>
+                    <span class="spark s3"></span>
+                    <span class="spark s4"></span>
+                    <span class="spark s5"></span>
+                </div>
+                <h3 class="elite-title">Pacote Elite</h3>
                 <p>4-7 posts por semana</p>
                 <p>4-7 reels por semana</p>
                 <p>Gerenciamento de Rede Social</p>
@@ -418,7 +185,8 @@
     <!-- Portfólio -->
     <section id="portfolio" class="scroll-reveal">
         <h2 class="gradient-title">Portfólio</h2>
-        <iframe src="https://francodocess.my.canva.site/portfolio-mightx"></iframe>
+        <img src="https://raw.githubusercontent.com/mightxwebdzn-web/MightX-Ascens-o-Digital-Criativa/main/Portf%C3%B3lio%20MightX.png" alt="Portfólio MightX">
+        <a href="https://francodocess.my.canva.site/portfolio-mightx" target="_blank" class="gradient-button">Visualizar</a>
     </section>
 
     <!-- Depoimentos -->
@@ -441,20 +209,149 @@
                 <p>Muito bom! Pegaram a minha ideia e me entregaram de forma rápida e eficiente!</p>
             </div>
         </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePcVlD_37cn0umPlm7l2KpkTDwekHm1kdrMiqegkSM9BqZkw/viewform" target="_blank" class="gradient-button">Enviar Depoimento</a>
     </section>
 
-    <script>
-        // Scroll reveal animation
-        const scrollReveals = document.querySelectorAll('.scroll-reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
+    <!-- New Section (particles canvas) -->
+    <section id="cta" class="scroll-reveal">
+        <canvas data-particle-animation></canvas>
+        <h2>Confie em quem entende, sinta o poder da transformação e escolha com a razão.</h2>
+        <a href="https://api.whatsapp.com/send/?phone=%2B5533984067438&text&type=phone_number&app_absent=0" target="_blank" class="cta-button">Fale Conosco</a>
+    </section>
 
-        scrollReveals.forEach(element => observer.observe(element));
+    <footer>© 2025 MightX Ascensão Digital & Criativa.</footer>
+
+    <script>
+        // Radial Menu Toggle (simple horizontal)
+        const menuButton = document.querySelector('.menu-button');
+        const logoBtn = document.getElementById('logo-btn');
+        const menuOptions = document.getElementById('menu-options');
+        let menuOpen = false;
+        logoBtn.addEventListener('click', (e) => { e.stopPropagation(); menuOpen = !menuOpen; menuOptions.classList.toggle('active', menuOpen); });
+        document.addEventListener('click', (e) => { if(menuOpen && !menuButton.contains(e.target)){ menuOpen=false; menuOptions.classList.remove('active'); } });
+
+        // Scroll reveal using IntersectionObserver
+        const scrollReveals = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: .12 });
+        scrollReveals.forEach(el=>observer.observe(el));
+
+        // ---------------------
+        // Particle animation (fixed issues)
+        // - mouse coords are now canvas-relative (top-left)
+        // - circles generated once and reused
+        // - draw uses x + translateX without messing context transform
+        // - canvas scaled for devicePixelRatio once on resize
+        // ---------------------
+        class ParticleAnimation {
+          constructor(el, opts={}){
+            this.canvas = el;
+            if(!this.canvas) return;
+            this.ctx = this.canvas.getContext('2d');
+            this.dpr = window.devicePixelRatio || 1;
+            this.opts = Object.assign({ quantity: 60, ease: 12, maxSpeed: 0.5 }, opts);
+            this.circles = [];
+            this.mouse = { x: -9999, y: -9999 };
+            this.resize = this.resize.bind(this);
+            this.onMove = this.onMove.bind(this);
+            this.animate = this.animate.bind(this);
+            this.init();
+          }
+
+          init(){
+            this.resize();
+            window.addEventListener('resize', this.resize);
+            window.addEventListener('mousemove', this.onMove);
+            this.animate();
+          }
+
+          resize(){
+            const rect = this.canvas.getBoundingClientRect();
+            this.width = Math.max(200, Math.floor(rect.width));
+            this.height = Math.max(120, Math.floor(rect.height));
+            this.canvas.width = this.width * this.dpr;
+            this.canvas.height = this.height * this.dpr;
+            this.canvas.style.width = this.width + 'px';
+            this.canvas.style.height = this.height + 'px';
+            this.ctx.setTransform(this.dpr,0,0,this.dpr,0,0);
+
+            // (re)populate circles
+            this.circles.length = 0;
+            for(let i=0;i<this.opts.quantity;i++){
+              this.circles.push(this._createCircle());
+            }
+          }
+
+          _createCircle(){
+            return {
+              x: Math.random()*this.width,
+              y: Math.random()*this.height,
+              size: (Math.random()*2)+0.6,
+              alpha: 0,
+              targetAlpha: 0.15 + Math.random()*0.6,
+              vx: (Math.random()-0.5)*this.opts.maxSpeed,
+              vy: (Math.random()-0.5)*this.opts.maxSpeed,
+              translateX:0,
+              translateY:0,
+              magnet: 40 + Math.random()*120
+            };
+          }
+
+          onMove(e){
+            const rect = this.canvas.getBoundingClientRect();
+            this.mouse.x = (e.clientX - rect.left);
+            this.mouse.y = (e.clientY - rect.top);
+          }
+
+          clear(){ this.ctx.clearRect(0,0,this.width,this.height); }
+
+          animate(){
+            this.clear();
+            for(let i=0;i<this.circles.length;i++){
+              const c = this.circles[i];
+              // basic movement
+              c.x += c.vx; c.y += c.vy;
+              if(c.x < -10) c.x = this.width + 10;
+              if(c.x > this.width+10) c.x = -10;
+              if(c.y < -10) c.y = this.height + 10;
+              if(c.y > this.height+10) c.y = -10;
+
+              // alpha ease towards target if near edges
+              const edgeDist = Math.min(c.x, this.width - c.x, c.y, this.height - c.y);
+              const edgeFactor = Math.max(0, Math.min(1, (edgeDist / 60)));
+              c.alpha = c.targetAlpha * edgeFactor;
+
+              // mouse interaction (repel)
+              const dx = c.x - this.mouse.x;
+              const dy = c.y - this.mouse.y;
+              const dist = Math.sqrt(dx*dx + dy*dy);
+              if(dist < c.magnet){
+                // move slightly away from mouse
+                const force = (1 - (dist / c.magnet)) * 8;
+                c.translateX += (dx/dist) * force * 0.6;
+                c.translateY += (dy/dist) * force * 0.6;
+              } else {
+                // relax translation back to zero
+                c.translateX += (0 - c.translateX)/this.opts.ease;
+                c.translateY += (0 - c.translateY)/this.opts.ease;
+              }
+
+              // draw
+              this.ctx.beginPath();
+              this.ctx.arc(c.x + c.translateX, c.y + c.translateY, c.size, 0, Math.PI*2);
+              this.ctx.fillStyle = `rgba(255,255,255,${c.alpha})`;
+              this.ctx.fill();
+            }
+            requestAnimationFrame(this.animate);
+          }
+        }
+
+        // initialize particle canvas(es)
+        document.querySelectorAll('[data-particle-animation]').forEach(canvas=>{
+          // ensure canvas fills parent
+          canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight;
+          new ParticleAnimation(canvas, { quantity: 80, ease: 14, maxSpeed: 0.6 });
+        });
+
     </script>
 </body>
 </html>
