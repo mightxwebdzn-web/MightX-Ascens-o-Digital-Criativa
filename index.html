@@ -69,6 +69,47 @@
         #portfolio img{width:100%;max-width:800px;border-radius:10px;margin:0 auto;display:block}
         #portfolio .gradient-button{margin:20px auto;display:block;width:fit-content}
         #depoimentos{background:var(--bg-color);text-align:center;padding:60px 5% 40px} /* Ajuste no padding */
+        
+        /* Nova seção Nossas Ferramentas */
+        #nossas-ferramentas {
+            background: var(--section-bg); /* Agora usa a variável para se adaptar ao tema */
+            padding: 60px 5%;
+            text-align: center;
+        }
+        #nossas-ferramentas .card {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        #nossas-ferramentas .card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #6a00f4, #00ddeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #nossas-ferramentas .card h3 {
+            margin-bottom: 15px;
+        }
+        #nossas-ferramentas .card p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        #nossas-ferramentas .utilizar-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #6a00f4, #00ddeb);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform .3s;
+        }
+        #nossas-ferramentas .utilizar-btn:hover {
+            transform: scale(1.05);
+        }
+        
         #cta{background:linear-gradient(to bottom,#4B0082,#00008B);text-align:center;position:relative;overflow:hidden;min-height:240px;padding:40px 5%}
         #cta canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:auto;z-index:0}
         #cta h2{color:#fff;position:relative;z-index:2;margin-bottom:20px}
@@ -145,12 +186,12 @@
             <div class="card">
                 <i class="fas fa-lightbulb"></i>
                 <h3 class="gradient-title">O que é MightX?</h3>
-                <p>A MightX Ascensão Digital & Criativa é uma agência localizada em Ipanema, MG, dedicada a transformar suas ideias em realidade visual. Com uma equipe apaixonada e experiente, a MightX oferece uma ampla gama de serviços digitais, cono foco na criação de conteúdo e estratégias de marketing que ajudam empresas e indivíduos a aprimorar sua presença digital.</p>
+                <p>A MightX Ascensão Digital & Criativa é uma agência localizada em Ipanema, MG, dedicada a transformar suas ideias em realidade visual. Com uma equipe apaixonada e experiente, a MightX oferece uma ampla gama de serviços digitais, com foco na criação de conteúdo e estratégias de marketing que ajudam empresas e indivíduos a aprimorar sua presença digital.</p>
             </div>
             <div class="card">
                 <i class="fas fa-gem"></i>
                 <h3 class="gradient-title">Nossos Diferenciais</h3>
-                <p>O que nos destaca é o nosso compromisso com a qualidade e o profissionalismo. Utilizamos ferramentas avançadas e contamos com profissionais experientes para garantir que cada projeto atenda aos altos padrões que nossos clientes esperam. Além disso, cada cliente recebe estratégias adaptadas às suas necessidades, assegurando resultados que superam expectativas. Acompanhamos o desemponho de nossas campanhas através de análise de dados, permitindo ajustes que maximizam o retorno sobre investimento (ROI).</p>
+                <p>O que nos destaca é o nosso compromisso com a qualidade e o profissionalismo. Utilizamos ferramentas avançadas e contamos com profissionais experientes para garantir que cada projeto atenda aos altos padrões que nossos clientes esperam. Além disso, cada cliente recebe estratégias adaptadas às suas necessidades, assegurando resultados que superam expectativas. Acompanhamos o desempenho de nossas campanhas através de análise de dados, permitindo ajustes que maximizam o retorno sobre investimento (ROI).</p>
             </div>
             <div class="card">
                 <i class="fas fa-user"></i>
@@ -253,6 +294,17 @@
             </div>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSePcVlD_37cn0umPlm7l2KpkTDwekHm1kdrMiqegkSM9BqZkw/viewform" target="_blank" class="gradient-button">Enviar Depoimento</a>
+    </section>
+
+    <!-- Nova Seção: Nossas Ferramentas -->
+    <section id="nossas-ferramentas" class="scroll-reveal">
+        <h2 class="gradient-title">Nossas Ferramentas</h2>
+        <div class="card">
+            <i class="fas fa-star"></i>
+            <h3 class="gradient-title">MightX Indicações</h3>
+            <p>Ganhe desconto em nossos serviços através de indicações, crie um código de indicação ou reivindique um. Se tiver dúvidas para utilizar o sistema, contate-nos via Whatsapp.</p>
+            <a href="https://mightxwebdzn-web.github.io/MightX-Indica-es/" class="utilizar-btn">Utilizar</a>
+        </div>
     </section>
 
     <!-- New Section (particles canvas) -->
