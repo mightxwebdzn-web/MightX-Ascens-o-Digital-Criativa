@@ -169,16 +169,181 @@
         section h2{font-size:2.5rem;text-align:center;margin-bottom:20px}
         section .subtitle{font-size:1.2rem;text-align:center;margin-bottom:40px;color:var(--text-color)}
         .cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:20px}
+        
+        /* CORES DAS SEÇÕES - CORRIGIDAS */
+        #sobre-nos{background:var(--bg-color);padding:60px 5% 40px}
         #marketing{background:var(--section-bg);padding:60px 5% 40px}
-        #servicos{background:var(--bg-color);padding:60px 5% 40px}
-        #portfolio{background:var(--section-bg);text-align:center;padding:60px 5% 40px}
+        #protocolo-zenith{background:var(--bg-color);padding:60px 5% 40px}
+        #servicos{background:var(--section-bg);padding:60px 5% 40px}
+        #portfolio{background:var(--bg-color);text-align:center;padding:60px 5% 40px}
         #portfolio img{width:100%;max-width:800px;border-radius:10px;margin:0 auto;display:block}
         #portfolio .gradient-button{margin:20px auto;display:block;width:fit-content}
-        #depoimentos{background:var(--bg-color);text-align:center;padding:60px 5% 40px}
+        #depoimentos{background:var(--section-bg);text-align:center;padding:60px 5% 40px}
+        
+        /* Nova seção Protocolo Zenith */
+        .zenith-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+        .zenith-map {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            min-height: 200px;
+        }
+        .zenith-node {
+            position: relative;
+            min-width: 180px;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .zenith-node:hover {
+            transform: translateY(-5px);
+        }
+        .zenith-content {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .zenith-content::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: 15px;
+            background: linear-gradient(90deg, #6a00f4, #00ddeb);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            z-index: -1;
+        }
+        .zenith-content h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            color: var(--text-color);
+        }
+        .zenith-connector {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #6a00f4, #00ddeb);
+            position: relative;
+        }
+        .zenith-connector::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid #6a00f4;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        /* Modal */
+        .zenith-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        .zenith-modal-content {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+        .zenith-modal-content::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: 15px;
+            background: linear-gradient(90deg, #6a00f4, #00ddeb);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            z-index: -1;
+        }
+        .zenith-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+        .zenith-close:hover {
+            color: #6a00f4;
+        }
+        #zenith-modal-body h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, #6a00f4, #00ddeb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #zenith-modal-body p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        #zenith-modal-body ul {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        #zenith-modal-body li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .zenith-map {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            .zenith-node {
+                margin: 15px 0;
+                min-width: 200px;
+            }
+            .zenith-connector {
+                width: 2px;
+                height: 40px;
+            }
+            .zenith-connector::after {
+                right: 50%;
+                top: auto;
+                bottom: -5px;
+                transform: translateX(50%);
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #6a00f4;
+            }
+        }
         
         /* Nova seção Nossas Ferramentas */
         #nossas-ferramentas {
-            background: var(--section-bg);
+            background: var(--bg-color);
             padding: 60px 5%;
             text-align: center;
         }
@@ -218,7 +383,7 @@
         
         /* Nova seção de Captura de Leads */
         #captura-leads {
-            background: var(--lead-bg);
+            background: var(--section-bg);
             padding: 80px 5%;
             text-align: center;
             color: var(--lead-text);
@@ -432,6 +597,53 @@
         </div>
     </section>
 
+    <!-- Protocolo Zenith -->
+    <section id="protocolo-zenith" class="scroll-reveal">
+        <h2 class="gradient-title">Protocolo Zenith</h2>
+        <p class="subtitle">Conheça a nossa metodologia de crescimento.</p>
+        
+        <div class="zenith-container">
+            <div class="zenith-map">
+                <!-- Etapa 1 -->
+                <div class="zenith-node" data-step="1">
+                    <div class="zenith-content">
+                        <h3>Análise Profunda</h3>
+                    </div>
+                </div>
+                
+                <!-- Linha de conexão -->
+                <div class="zenith-connector"></div>
+                
+                <!-- Etapa 2 -->
+                <div class="zenith-node" data-step="2">
+                    <div class="zenith-content">
+                        <h3>Planejamento Adaptativo</h3>
+                    </div>
+                </div>
+                
+                <!-- Linha de conexão -->
+                <div class="zenith-connector"></div>
+                
+                <!-- Etapa 3 -->
+                <div class="zenith-node" data-step="3">
+                    <div class="zenith-content">
+                        <h3>Arquitetura Digital e Branding</h3>
+                    </div>
+                </div>
+                
+                <!-- Linha de conexão -->
+                <div class="zenith-connector"></div>
+                
+                <!-- Etapa 4 -->
+                <div class="zenith-node" data-step="4">
+                    <div class="zenith-content">
+                        <h3>Propulsão Contínua</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Outros Serviços -->
     <section id="servicos" class="scroll-reveal">
         <h2 class="gradient-title">Outros Serviços</h2>
@@ -541,6 +753,16 @@
     </section>
 
     <footer>© 2025 MightX Ascensão Digital & Criativa.</footer>
+
+    <!-- Modal para exibir informações detalhadas -->
+    <div id="zenith-modal" class="zenith-modal">
+        <div class="zenith-modal-content">
+            <span class="zenith-close">&times;</span>
+            <div id="zenith-modal-body">
+                <!-- Conteúdo será preenchido via JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <script>
         // Radial Menu Toggle (simple horizontal)
@@ -737,6 +959,30 @@
                 keywords: ["pacote", "elite", "posts", "reels", "planejamento", "estratégico", "premium"]
             },
             {
+                title: "Protocolo Zenith - Análise Profunda",
+                content: "Antes de planejar, enxergamos com precisão. Estudo de mercado, análise do nicho, identificação de competidores.",
+                section: "protocolo-zenith",
+                keywords: ["protocolo", "zenith", "análise", "profunda", "estudo", "mercado", "nicho", "competidores"]
+            },
+            {
+                title: "Protocolo Zenith - Planejamento Adaptativo",
+                content: "Não fazemos planos, desenhamos sistemas evolutivos. Estratégias de marketing, comunicação, psicologia aplicada.",
+                section: "protocolo-zenith",
+                keywords: ["protocolo", "zenith", "planejamento", "adaptativo", "estratégias", "marketing", "comunicação"]
+            },
+            {
+                title: "Protocolo Zenith - Arquitetura Digital e Branding",
+                content: "A visão toma forma. Branding, identidade visual, construção de presença digital, SEO, copywriting.",
+                section: "protocolo-zenith",
+                keywords: ["protocolo", "zenith", "arquitetura", "digital", "branding", "identidade", "visual", "seo"]
+            },
+            {
+                title: "Protocolo Zenith - Propulsão Contínua",
+                content: "Crescimento não é fim. É ciclo. Atualizações constantes, marketing, tráfego, análise de métricas.",
+                section: "protocolo-zenith",
+                keywords: ["protocolo", "zenith", "propulsão", "contínua", "crescimento", "atualizações", "métricas"]
+            },
+            {
                 title: "Serviços - Edição de Vídeo",
                 content: "Transformamos suas gravações brutas em materiais de alta qualidade",
                 section: "servicos",
@@ -865,6 +1111,96 @@
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target) && !searchButton.contains(e.target)) {
                 searchResults.classList.remove('active');
+            }
+        });
+
+        // Dados do Protocolo Zenith
+        const zenithData = {
+            1: {
+                title: "Análise Profunda",
+                description: "🔍 Antes de planejar, enxergamos com precisão.",
+                items: [
+                    "Estudo de mercado",
+                    "Análise do nicho",
+                    "Identificação de competidores",
+                    "Detecção de pontos fortes e vulnerabilidades",
+                    "Investigação do público-alvo",
+                    "Diagnóstico comportamental do gestor"
+                ]
+            },
+            2: {
+                title: "Planejamento Adaptativo",
+                description: "🧬 Não fazemos planos, desenhamos sistemas evolutivos.",
+                items: [
+                    "Estratégias de marketing e posicionamento",
+                    "Comunicação + Psicologia aplicada",
+                    "Diferenciação competitiva",
+                    "Planejamento por checkpoints",
+                    "Protocolos de resposta rápida",
+                    "Plano de mitigação de riscos"
+                ]
+            },
+            3: {
+                title: "Arquitetura Digital e Branding",
+                description: "🏗️ A visão toma forma.",
+                items: [
+                    "Branding e identidade visual estratégica",
+                    "Construção de presença digital (site, redes)",
+                    "SEO, copywriting e funil de vendas",
+                    "Geração e captura de leads",
+                    "Prova social e construção de autoridade",
+                    "Planejamento para escalabilidade"
+                ]
+            },
+            4: {
+                title: "Propulsão Contínua",
+                description: "🚀 Crescimento não é fim. É ciclo.",
+                items: [
+                    "Atualizações constantes (conteúdo, design, site)",
+                    "Marketing + tráfego em otimização permanente",
+                    "Análise de métricas e realinhamento",
+                    "Monitoramento constante de concorrência",
+                    "Expansão progressiva do posicionamento"
+                ]
+            }
+        };
+
+        // Elementos do modal
+        const zenithModal = document.getElementById('zenith-modal');
+        const zenithModalBody = document.getElementById('zenith-modal-body');
+        const zenithClose = document.querySelector('.zenith-close');
+
+        // Abrir modal ao clicar em um nó
+        document.querySelectorAll('.zenith-node').forEach(node => {
+            node.addEventListener('click', function() {
+                const step = this.getAttribute('data-step');
+                const data = zenithData[step];
+                
+                if (data) {
+                    // Preencher o modal com os dados
+                    zenithModalBody.innerHTML = `
+                        <h3>${data.title}</h3>
+                        <p>${data.description}</p>
+                        <ul>
+                            ${data.items.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    `;
+                    
+                    // Exibir o modal
+                    zenithModal.style.display = 'block';
+                }
+            });
+        });
+
+        // Fechar modal
+        zenithClose.addEventListener('click', function() {
+            zenithModal.style.display = 'none';
+        });
+
+        // Fechar modal ao clicar fora dele
+        window.addEventListener('click', function(event) {
+            if (event.target === zenithModal) {
+                zenithModal.style.display = 'none';
             }
         });
 
